@@ -114,7 +114,7 @@ def sdd(A,kmax=100,alphamin=0.01,lmax=100,rhomin=0,yinit=1):
                 if k>0:       # python is zero-based             
                     s = s - (np.dot(xsav,(np.multiply(dsav,(np.dot(ysav.T,y))))))                    
                     
-                idx += 1            # Modified increment method, because modulo will never return zero
+                idx = np.mod(idx, n) + 1
                 if idx == n:        # When idx reaches n it should be changed to zero (otherwise an index out of bounds error will occur)
                     idx = 0
                 iits = iits + 1
