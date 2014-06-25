@@ -69,7 +69,9 @@ def sdd(A,kmax=100,alphamin=0.01,lmax=100,rhomin=0,yinit=1):
 #      C = 4,      Every 100th element of y is set to 1 starting with 1.
 #
 #   Default is C = 1.
-
+#
+#
+#   Reconstruction of the data can be obtained by np.dot(np.dot(X,np.diag(D.flatten().tolist())),Y.T)
 
 ### Check Input Arguments    
     
