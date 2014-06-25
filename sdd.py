@@ -120,8 +120,12 @@ def sdd(A,kmax=100,alphamin=0.01,lmax=100,rhomin=0,yinit=1):
                 iits = iits + 1
             iitssav[k] = iits
         elif yinit == 2:        # Cycling Periodic Ones
-            y = np.zeros((n,1))
-            y[((k-1) % n) + 1] = 1
+           y = np.zeros((n,1))
+            index = np.mod(k-1,n)+1
+            if index < n:                 
+                y[index] = 1
+            else:
+                y[0] = 1   
         elif yinit == 3:        # All Ones
             y = np.ones((n,1))
         elif yinit == 4:        # Periodic Ones
